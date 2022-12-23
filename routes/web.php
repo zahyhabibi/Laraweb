@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('index')
 Route::get('/login',[AuthController::class,'login'])->name('login');
 Route::get('/register',[AuthController::class, 'register']);
 
+Route::get('/mahasiswa',[MahasiswaController::class, 'index']);
+Route::get('/mahasiswa/create',[MahasiswaController::class, 'create']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -31,3 +35,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('mahasiswa', MahasiswaController::class);

@@ -585,12 +585,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">Mahasiswa</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard Pemasukan</li>
+                                <li class="breadcrumb-item active">Dashboard Mahasiswa</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -600,147 +600,147 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>150</h3>
 
-                                    <p>New Orders</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Bounce Rate</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>44</h3>
-
-                                    <p>Income Daily</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3>65</h3>
-
-                                    <p>Boom Sale</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Tambah Mahasiswa</h3>
                     </div>
-                    <!-- /.row -->
-                    <!-- Main row -->
-                    <div class="row">
-                        <section class="col-lg-5 connectedSortable">
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form action="{{url('mahasiswa/store')}}" method="POST" ">
+                        {{csrf_field()}}
+                        <div class=" card-body">
 
+                        <div class="form-group">
+                            <label for="#">NPM</label>
+                            <input name="Npm" type="email" class="form-control" id="#" placeholder="Enter NPM">
+                        </div>
 
+                        <div class="form-group">
+                            <label for="#">Nama Lengkap</label>
+                            <input name="Nama" type="email" class="form-control" id="#"
+                                placeholder="Enter Nama Lengkap">
+                        </div>
 
-                            <!-- solid sales graph -->
+                        <div class="form-group">
+                            <label for="#">Alamat</label>
+                            <input name="alamat" type="email" class="form-control" id="#" placeholder="Enter alamat">
+                        </div>
 
+                        <div class="form-group">
+                            <label for="#">Semester</label>
+                            <input name="Semester" type="email" class="form-control" id="#"
+                                placeholder="Enter semester">
+                        </div>
 
-                            <!-- Calendar -->
+                        <div class="form-group">
+                            <label for="#">Jumlah sks</label>
+                            <input name="jml_sks" type="email" class="form-control" id="#"
+                                placeholder="Enter jumlah sks">
+                        </div>
+                        <div class="form-group">
+                            <label for="#">Nilai Tugas</label>
+                            <input name="NTugas" type="email" class="form-control" id="#" placeholder="Enter Nilai">
+                        </div>
+                        <div class="form-group">
+                            <label for="#">Nilai Kehadiran</label>
+                            <input name="NKehadiran" type="email" class="form-control" id="#" placeholder="Enter Nilai">
+                        </div>
 
-                            <!-- /.card -->
-                        </section>
-                        <!-- right col -->
-                    </div>
-                    <!-- /.row (main row) -->
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
+                        <div class="form-group">
+                            <label for="#">Nilai UTS</label>
+                            <input name="NUTS" type="email" class="form-control" id="#" placeholder="Enter Nilai">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="#">Nilai UAS</label>
+                            <input name="NUAS" type="email" class="form-control" id="#" placeholder="Enter Nilai">
+                        </div>
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </form>
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
+    </div>
+    <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+    </div>
+    </div>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class=" main-footer">
+        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 3.2.0
+        </div>
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
     <!-- jQuery -->
     <script src="{{ asset('AdminLTE-master/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{ asset('AdminLTE-master/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/jquery-ui/jquery-ui.min.js') }}">
+    </script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
     $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
-    <script src="{{ asset('AdminLTE-master/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/bootstrap/js/bootstrap.bundle.min.js') }}">
+    </script>
     <!-- ChartJS -->
-    <script src="{{ asset('AdminLTE-master/plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/chart.js/Chart.min.js') }}">
+    </script>
     <!-- Sparkline -->
-    <script src="{{ asset('AdminLTE-master/plugins/sparklines/sparkline.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/sparklines/sparkline.js') }}">
+    </script>
     <!-- JQVMap -->
-    <script src="{{ asset('AdminLTE-master/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('AdminLTE-master/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/jqvmap/jquery.vmap.min.js') }}">
+    </script>
+    <script src="{{ asset('AdminLTE-master/plugins/jqvmap/maps/jquery.vmap.usa.js') }}">
+    </script>
     <!-- jQuery Knob Chart -->
-    <script src="{{ asset('AdminLTE-master/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/jquery-knob/jquery.knob.min.js') }}">
+    </script>
     <!-- daterangepicker -->
-    <script src="{{ asset('AdminLTE-master/plugins/moment/moment.min.js') }}"></script>
-    <script src="{{ asset('AdminLTE-master/plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/moment/moment.min.js') }}">
+    </script>
+    <script src="{{ asset('AdminLTE-master/plugins/daterangepicker/daterangepicker.js') }}">
+    </script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="{{ asset('AdminLTE-master/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}">
     </script>
     <!-- Summernote -->
-    <script src="{{ asset('AdminLTE-master/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/summernote/summernote-bs4.min.js') }}">
+    </script>
     <!-- overlayScrollbars -->
-    <script src="{{ asset('AdminLTE-master/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}">
+    </script>
     <!-- AdminLTsE App -->
-    <script src="{{ asset('AdminLTE-master/dist/js/adminlte.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/dist/js/adminlte.js') }}">
+    </script>
     <!-- AdminLTsE for demo purposes -->
-    <script src="{{ asset('AdminLTE-master/dist/js/demo.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/dist/js/demo.js') }}">
+    </script>
     <!-- AdminLTsE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ asset('AdminLTE-master/dist/js/pages/dashboard.js') }}"></script>
+    <script src="{{ asset('AdminLTE-master/dist/js/pages/dashboard.js') }}">
+    </script>
 </body>
 
 </html>
