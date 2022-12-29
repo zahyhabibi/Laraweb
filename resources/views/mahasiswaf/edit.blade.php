@@ -607,54 +607,55 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{url('mahasiswa/store')}}" method="POST">
+                    {{-- <form action="{{url('mahasiswa/{Npm}')}}/update" method="POST"> --}}
+                    <form action="/mahasiswa/{{ $mahasiswa->Npm }}/update" method="POST">
                         {{csrf_field()}}
                         <div class=" card-body">
 
                         <div class="form-group">
                             <label for="#">NPM</label>
-                            <input name="Npm" type="" class="form-control" id="#" placeholder="Enter NPM">
+                            <input name="Npm" type="" class="form-control" id="#" placeholder="Enter NPM" value="{{ $mahasiswa->Npm }}">
                         </div>
 
                         <div class="form-group">
                             <label for="#">Nama Lengkap</label>
-                            <input name="Nama" type="" class="form-control" id="#"
+                            <input name="Nama" type="" class="form-control" id="#" value="{{ $mahasiswa->Nama }}"
                                 placeholder="Enter Nama Lengkap">
                         </div>
 
                         <div class="form-group">
                             <label for="#">Alamat</label>
-                            <input name="alamat" type="" class="form-control" id="#" placeholder="Enter alamat">
+                            <input name="alamat" type="" class="form-control" id="#" value="{{ $mahasiswa->alamat }}" placeholder="Enter alamat">
                         </div>
 
                         <div class="form-group">
                             <label for="#">Semester</label>
-                            <input name="Semester" type="" class="form-control" id="#"
+                            <input name="Semester" type="" class="form-control" id="#" value="{{ $mahasiswa->Semester }}"
                                 placeholder="Enter semester">
                         </div>
 
                         <div class="form-group">
                             <label for="#">Jumlah sks</label>
-                            <input name="jml_sks" type="" class="form-control" id="#"
+                            <input name="jml_sks" type="" class="form-control" id="#" value="{{ $mahasiswa->jml_sks }}"
                                 placeholder="Enter jumlah sks">
                         </div>
                         <div class="form-group">
                             <label for="#">Nilai Tugas</label>
-                            <input name="NTugas" type="" class="form-control" id="#" placeholder="Enter Nilai">
+                            <input name="NTugas" type="" class="form-control" id="#" value="{{ $mahasiswa->NTugas }}" placeholder="Enter Nilai">
                         </div>
                         <div class="form-group">
                             <label for="#">Nilai Kehadiran</label>
-                            <input name="NKehadiran" type="" class="form-control" id="#" placeholder="Enter Nilai">
+                            <input name="NKehadiran" type="" class="form-control" id="#" value="{{ $mahasiswa->NKehadiran }}" placeholder="Enter Nilai">
                         </div>
 
                         <div class="form-group">
                             <label for="#">Nilai UTS</label>
-                            <input name="NUTS" type="" class="form-control" id="#" placeholder="Enter Nilai">
+                            <input name="NUTS" type="" class="form-control" id="#" value="{{ $mahasiswa->NUTS }}" placeholder="Enter Nilai">
                         </div>
 
                         <div class="form-group">
                             <label for="#">Nilai UAS</label>
-                            <input name="NUAS" type="" class="form-control" id="#" placeholder="Enter Nilai">
+                            <input name="NUAS" type="" class="form-control" id="#" value="{{ $mahasiswa->NUAS }}" placeholder="Enter Nilai">
                         </div>
 
                 </div>

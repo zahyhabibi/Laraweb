@@ -649,11 +649,12 @@
                                             <td>{{$item->NKehadiran}}</td>
                                             <td>{{$item->NUTS}}</td>
                                             <td>{{$item->NUAS}}</td>
-                                            <td><a href="/Mahasiswa/{{$item->Npm}}/delete" class="btn btn-danger"
+                                            
+                                            <td><a href="/mahasiswa/{{$item->Npm}}/delete" class="btn btn-danger"
                                                     onclick="return confirm('apakah yakin dihapus? {{$item->Nama}}')"
                                                     l>Hapooos</a>
-                                                <a href="/Mahasiswa/{{$item->Npm}}/delete" class="btn btn-warning"
-                                                    onclick="return confirm('apakah yakin dihapus? {{$item->Nama}}')"
+                                                <a href="/mahasiswa/{{$item->Npm}}/edit" class="btn btn-warning"
+                                                    onclick="return confirm('apakah yakin mengedit? {{$item->Nama}}')"
                                                     l>Edit</a>
                                             </td>
                                         </tr>

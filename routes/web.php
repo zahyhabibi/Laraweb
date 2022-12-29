@@ -25,8 +25,18 @@ Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('index')
 Route::get('/login',[AuthController::class,'login'])->name('login');
 Route::get('/register',[AuthController::class, 'register']);
 
-Route::get('/mahasiswa',[MahasiswaController::class, 'index']);
+
+//Create
 Route::get('/mahasiswa/create',[MahasiswaController::class, 'create']);
+Route::post('/mahasiswa/store',[MahasiswaController::class, 'store']);
+//Read
+Route::get('/mahasiswa',[MahasiswaController::class, 'index']);
+//Update
+Route::get('/mahasiswa/{Npm}/edit',[MahasiswaController::class, 'edit']);
+Route::post('/mahasiswa/{Npm}/update',[MahasiswaController::class, 'update']);
+//Delete
+Route::get('/mahasiswa/{Npm}/delete',[MahasiswaController::class, 'destroy']);
+
 
 Auth::routes();
 
@@ -37,4 +47,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::resource('mahasiswa', MahasiswaController::class);
+// Route::resource('mahasiswa', MahasiswaController::class);
