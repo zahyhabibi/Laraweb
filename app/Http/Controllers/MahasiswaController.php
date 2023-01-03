@@ -137,4 +137,12 @@ class MahasiswaController extends Controller
         $mahasiswa->delete();
         return redirect()->back();
     }
+    public function cari(Request $request){
+        if($request->has('cari')){
+            $mahasiswa = Mahasiswa::where('Npm', 'LIKE', '%'.$request->cari.'%')->get();  
+        }else{
+            $mahasiswa = Mahasiswa::all();
+        }
+        return view('dashboard.mahasiswa',['mahasiswa' =>$mahasiswa]);
+    }
 }

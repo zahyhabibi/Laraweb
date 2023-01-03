@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\DosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('index')
 Route::get('/login',[AuthController::class,'login'])->name('login');
 Route::get('/register',[AuthController::class, 'register']);
 
-
+//Mahasiswa
 //Create
 Route::get('/mahasiswa/create',[MahasiswaController::class, 'create']);
 Route::post('/mahasiswa/store',[MahasiswaController::class, 'store']);
@@ -36,6 +37,17 @@ Route::get('/mahasiswa/{Npm}/edit',[MahasiswaController::class, 'edit']);
 Route::post('/mahasiswa/{Npm}/update',[MahasiswaController::class, 'update']);
 //Delete
 Route::get('/mahasiswa/{Npm}/delete',[MahasiswaController::class, 'destroy']);
+//search
+Route::get('/mahasiswa/search',[MahasiswaController::class, 'cari']);
+
+
+//Dosen
+//Read
+Route::get('/dosen',[DosenController::class,'index']);
+
+//delete
+Route::get('/dosen/{Kd_dosen}/delete',[DosenController::class,'destroy']);
+
 
 
 Auth::routes();
