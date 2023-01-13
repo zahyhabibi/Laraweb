@@ -37,14 +37,16 @@ class Mahasiswa extends Migration
     public function down()
     {
         Schema::dropIfExists('mahasiswa');
-            // $table->id('Npm', 7);
-            // $table->string('Nama');
-            // $table->string('alamat');
-            // $table->string('Semester');
-            // $table->string('jml_sks');
-            // $table->integer('NTugas');
-            // $table->integer('NKehadiran');
-            // $table->integer('NUTS');
-            // $table->integer('NUAS');
+        // $table->id('Npm', 7);
+        // $table->string('Nama');
+        // $table->string('alamat');
+        // $table->string('Semester');
+        // $table->string('jml_sks');
+        // $table->integer('NTugas');
+        // $table->integer('NKehadiran');
+        // $table->integer('NUTS');
+        // $table->integer('NUAS');
+        // $table->timestamp('updated_at');
+        // $table->timestamp('created_at');
     }
 }

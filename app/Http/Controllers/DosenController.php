@@ -26,7 +26,7 @@ class DosenController extends Controller
      */
     public function create()
     {
-        //
+        return view('dosen.create');
     }
 
     /**
@@ -37,7 +37,27 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'Kd_dosen'     => 'required',
+            'nama'         => 'required',
+            'email'        => 'required',
+            'alamat'       => 'required',
+            'jurusan'      => 'required',
+            'prodi'        => 'required',
+            'masa_jabatan' => 'required'
+            
+        ]);
+
+        Dosen::create([
+            'Kd_dosen'     =>$request->Kd_dosen,
+            'nama'         =>$request->nama,
+            'email'        =>$request->email,
+            'alamat'       =>$request->alamat,
+            'jurusan'      =>$request->jurusan,
+            'prodi'        =>$request->prodi,
+            'masa_jabatan' =>$request->masa_jabatan
+        ]);
+        return redirect('/dosen');
     }
 
     /**
@@ -57,9 +77,10 @@ class DosenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($primaryKey)
     {
-        //
+        $doss = Dosen::find($primaryKey);
+        return view('dosen.edit', ['dosen' => $doss]);
     }
 
     /**
@@ -69,10 +90,31 @@ class DosenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $primaryKey)
     {
-        //
+        $this->validate($request,[
+            'Kd_dosen'     => 'required',
+            'nama'         => 'required',
+            'email'        => 'required',
+            'alamat'       => 'required',
+            'jurusan'      => 'required',
+            'prodi'        => 'required',
+            'masa_jabatan' => 'required'
+            
+        ]);
+        $doss = Dosen::find($primaryKey);
+        $doss->Kd_dosen = $request->Kd_dosen;
+        $doss->nama = $request->nama;
+        $doss->email = $request->email;
+        $doss->alamat = $request->alamat;
+        $doss->jurusan = $request->jurusan;
+        $doss->prodi = $request->prodi;
+        $doss->masa_jabatan = $request->masa_jabatan;
+        
+        $doss->save();
+        return redirect('/dosen');
     }
+  
 
     /**
      * Remove the specified resource from storage.
@@ -87,4 +129,5 @@ class DosenController extends Controller
         $dosen->delete();
         return redirect()->back();
     }
+
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
+use App\Models\Dosen;
+use App\Models\Ortu;
 
 class MahasiswaController extends Controller
 {
@@ -46,7 +48,8 @@ class MahasiswaController extends Controller
             'NTugas'     => 'required',
             'NKehadiran' => 'required',
             'NUTS'       => 'required',
-            'NUAS'       => 'required'
+            'NUAS'       => 'required',
+            'Kd_dosen'       => 'required'
             
         ]);
 
@@ -59,7 +62,8 @@ class MahasiswaController extends Controller
             'NTugas'        =>$request->NTugas,
             'NKehadiran'    =>$request->NKehadiran,
             'NUTS'          =>$request->NUTS,
-            'NUAS'          =>$request->NUAS
+            'NUAS'          =>$request->NUAS,
+            'Kd_dosen'      =>$request->Kd_dosen
         ]);
         return redirect('/mahasiswa'); 
     }
@@ -105,7 +109,8 @@ class MahasiswaController extends Controller
             'NTugas'     => 'required',
             'NKehadiran' => 'required',
             'NUTS'       => 'required',
-            'NUAS'       => 'required'
+            'NUAS'       => 'required',
+            'Kd_dosen'       => 'required'
             
         ]);
         $mahasiswa = Mahasiswa::find($primaryKey);
@@ -118,10 +123,12 @@ class MahasiswaController extends Controller
         $mahasiswa->NKehadiran = $request->NKehadiran;
         $mahasiswa->NUTS = $request->NUTS;
         $mahasiswa->NUAS = $request->NUAS;
+        $mahasiswa->Kd_dosen = $request->Kd_dosen;
 
         $mahasiswa->save();
 
         return redirect('/mahasiswa'); 
+        console.log($mahasiswa);
     }
 
     /**
@@ -144,5 +151,29 @@ class MahasiswaController extends Controller
             $mahasiswa = Mahasiswa::all();
         }
         return view('dashboard.mahasiswa',['mahasiswa' =>$mahasiswa]);
+    }
+
+    //one to one
+    public function Ortu(){
+        $mahasiswa = Mahasiswa::all();
+        foreach($mahasiswa as $item){
+            $item->Ortu = Ortu::where('Npm',$item->Npm)->first();
+        }
+        return view('mahasiswaf.orangtua',['mahasiswa' => $mahasiswa]);
+    }
+
+    //one to many
+    public function dosen(){
+        $dosen = Dosen::all();
+        foreach($dosen as $item){
+            $item->mahasiswa = Mahasiswa::where('Kd_dosen',$item->Kd_dosen)->get();
+        }
+        return view('dosen.index',['dosen'=>$dosen]);
+    }
+
+    public function json(){
+        $data = Mahasiswa::all();
+        return response()->json($data);
+        
     }
 }

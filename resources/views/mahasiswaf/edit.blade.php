@@ -614,7 +614,7 @@
 
                         <div class="form-group">
                             <label for="#">NPM</label>
-                            <input name="Npm" type="" class="form-control" id="#" placeholder="Enter NPM" value="{{ $mahasiswa->Npm }}">
+                            <input name="Npm" type="" class="form-control" id="#" placeholder="Enter NPM" value="{{ $mahasiswa->Npm }}" readonly>
                         </div>
 
                         <div class="form-group">
@@ -656,6 +656,10 @@
                         <div class="form-group">
                             <label for="#">Nilai UAS</label>
                             <input name="NUAS" type="" class="form-control" id="#" value="{{ $mahasiswa->NUAS }}" placeholder="Enter Nilai">
+                        </div>
+                        <div class="form-group">
+                            <label for="#">Kode Wali dosen</label>
+                            <input name="Kd_dosen" type="" class="form-control" id="#" value="{{ $mahasiswa->Kd_dosen }}" placeholder="Enter Nilai">
                         </div>
 
                 </div>

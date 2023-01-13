@@ -657,6 +657,16 @@
                             <input name="NUAS" type="" class="form-control" id="#" placeholder="Enter Nilai">
                         </div>
 
+                        <div class="form-group">
+                            <label for="#">Kode Wali dosen</label>
+                            <input name="Kd_dosen" type="" class="form-control" id="#" placeholder="Enter Kode Wali Dosen">
+                        </div>
+
+                        {{-- <div class="form-group">
+                            <label for="#">KTP / SIM</label>
+                            <input name="id" type="" class="form-control" id="#" placeholder="Enter No KTP/SIM">
+                        </div> --}}
+
                 </div>
                 <!-- /.card-body -->
 
